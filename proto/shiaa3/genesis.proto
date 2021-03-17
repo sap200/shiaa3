@@ -1,0 +1,12 @@
+syntax = "proto3";
+package sap200.shiaa3.shiaa3;
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/sap200/shiaa3/x/shiaa3/types";
+
+// GenesisState defines the capability module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+}
+
