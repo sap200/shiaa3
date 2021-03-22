@@ -1,0 +1,22 @@
+=============== Mar 18, 2021 (IST) ===============
+12:26:21.587279 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:26:21.593440 db@open opening
+12:26:21.595507 version@stat F·[] S·0B[] Sc·[]
+12:26:21.598606 db@janitor F·2 G·0
+12:26:21.598663 db@open done T·5.205737ms
+12:33:24.581614 memdb@flush N·35403 S·3MiB
+12:33:24.604325 memdb@flush created L0@3 N·35403 S·2MiB "s/1,v174":"s/p..hts,v176"
+12:33:24.604368 version@stat F·[1] S·2MiB[2MiB] Sc·[0.25]
+12:33:24.606657 memdb@flush committed F·1 T·25.002862ms
+12:33:24.607185 journal@remove removed @1
+=============== Mar 18, 2021 (IST) ===============
+12:33:27.218502 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:33:27.218654 version@stat F·[1] S·2MiB[2MiB] Sc·[0.25]
+12:33:27.218772 db@open opening
+12:33:27.218821 journal@recovery F·1
+12:33:27.218905 journal@recovery recovering @2
+12:33:27.222559 memdb@flush created L0@4 N·183 S·11KiB "s/405,v35404":"s/p..hts,v35406"
+12:33:27.222806 version@stat F·[2] S·2MiB[2MiB] Sc·[0.50]
+12:33:27.230053 db@janitor F·4 G·0
+12:33:27.230072 db@open done T·11.29038ms
+12:33:27.249974 table@compaction L0·2 -> L1·0 S·2MiB Q·35587

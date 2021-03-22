@@ -1,0 +1,151 @@
+syntax = "proto3";
+package sap200.shiaa3.assets;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/sap200/shiaa3/x/assets/types";
+
+// Msg defines the Msg service.
+service Msg {
+    // this line is used by starport scaffolding # proto/tx/rpc
+  rpc SendIbcAsset(MsgSendIbcAsset) returns (MsgSendIbcAssetResponse);
+  rpc CreateTimedOutAsset(MsgCreateTimedOutAsset) returns (MsgCreateTimedOutAssetResponse);
+  rpc UpdateTimedOutAsset(MsgUpdateTimedOutAsset) returns (MsgUpdateTimedOutAssetResponse);
+  rpc DeleteTimedOutAsset(MsgDeleteTimedOutAsset) returns (MsgDeleteTimedOutAssetResponse);
+  rpc CreateSentAsset(MsgCreateSentAsset) returns (MsgCreateSentAssetResponse);
+  rpc UpdateSentAsset(MsgUpdateSentAsset) returns (MsgUpdateSentAssetResponse);
+  rpc DeleteSentAsset(MsgDeleteSentAsset) returns (MsgDeleteSentAssetResponse);
+  rpc CreateTransferAsset(MsgCreateTransferAsset) returns (MsgCreateTransferAssetResponse);
+  rpc UpdateTransferAsset(MsgUpdateTransferAsset) returns (MsgUpdateTransferAssetResponse);
+  rpc DeleteTransferAsset(MsgDeleteTransferAsset) returns (MsgDeleteTransferAssetResponse);
+  rpc CreateAsset(MsgCreateAsset) returns (MsgCreateAssetResponse);
+  rpc UpdateAsset(MsgUpdateAsset) returns (MsgUpdateAssetResponse);
+  rpc DeleteAsset(MsgDeleteAsset) returns (MsgDeleteAssetResponse);
+}
+
+// this line is used by starport scaffolding # proto/tx/message
+message MsgSendIbcAsset {
+  string sender = 1;
+  string port = 2;
+  string channelID = 3;
+  uint64 timeoutTimestamp = 4;
+  string AssetSerial = 5;
+  string Receiver = 6;
+}
+
+message MsgSendIbcAssetResponse {
+}
+
+message MsgCreateTimedOutAsset {
+  string creator = 1;
+  string AssetSerial = 2;
+  string Receiver = 3;
+  string TargetChain = 4;
+}
+
+message MsgCreateTimedOutAssetResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateTimedOutAsset {
+  string creator = 1;
+  uint64 id = 2;
+  string AssetSerial = 3;
+  string Receiver = 4;
+  string TargetChain = 5;
+}
+
+message MsgUpdateTimedOutAssetResponse { }
+
+message MsgDeleteTimedOutAsset {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteTimedOutAssetResponse { }
+
+message MsgCreateSentAsset {
+  string creator = 1;
+  string AssetSerial = 2;
+  string Receiver = 3;
+  string TargetChain = 4;
+}
+
+message MsgCreateSentAssetResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateSentAsset {
+  string creator = 1;
+  uint64 id = 2;
+  string AssetSerial = 3;
+  string Receiver = 4;
+  string TargetChain = 5;
+}
+
+message MsgUpdateSentAssetResponse { }
+
+message MsgDeleteSentAsset {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteSentAssetResponse { }
+
+message MsgCreateTransferAsset {
+  string creator = 1;
+  string AssetSerial = 2;
+  string Receiver = 3;
+}
+
+message MsgCreateTransferAssetResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateTransferAsset {
+  string creator = 1;
+  uint64 id = 2;
+  string AssetSerial = 3;
+  string Receiver = 4;
+}
+
+message MsgUpdateTransferAssetResponse { }
+
+message MsgDeleteTransferAsset {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteTransferAssetResponse { }
+
+message MsgCreateAsset {
+  string creator = 1;
+  string Serial = 2;
+  string Name = 3;
+  int32 AssetType = 4;
+  int32 Tokens = 5;
+  string Owner = 6;
+}
+
+message MsgCreateAssetResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateAsset {
+  string creator = 1;
+  uint64 id = 2;
+  string Serial = 3;
+  string Name = 4;
+  int32 AssetType = 5;
+  int32 Tokens = 6;
+  string Owner = 7;
+}
+
+message MsgUpdateAssetResponse { }
+
+message MsgDeleteAsset {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteAssetResponse { }

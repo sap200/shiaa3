@@ -1,0 +1,28 @@
+accounts:
+  - name: tom
+    coins: ["1000token", "100000000stake"]
+  - name: jerry
+    coins: ["500token"]
+validator:
+  name: tom
+  staked: "100000000stake"
+client:
+  vuex:
+    path: "vue/src/store"
+faucet:
+  name: jerry 
+  coins: ["5token"]
+  host: ":4501"
+init:
+  home: "$HOME/.ibc2"
+genesis:
+  chain_id: "shiaa3-ibc2"
+host:
+  rpc: ":26659"
+  p2p: ":26658"
+  prof: ":6861"
+  grpc: ":9891"
+  api: ":1318"
+  frontend: ":8081"
+  dev-ui: ":12346"
+

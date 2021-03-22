@@ -2,11 +2,27 @@ syntax = "proto3";
 package sap200.shiaa3.shiaa3;
 
 // this line is used by starport scaffolding # genesis/proto/import
+import "shiaa3/Winners.proto";
+import "shiaa3/Members.proto";
+import "shiaa3/Pool4Ticket.proto";
+import "shiaa3/Pool3Ticket.proto";
+import "shiaa3/Pool2Ticket.proto";
+import "shiaa3/Pool1Ticket.proto";
+import "shiaa3/Pool0Ticket.proto";
+import "shiaa3/JoinPoolAndStakeAsset.proto";
 
 option go_package = "github.com/sap200/shiaa3/x/shiaa3/types";
 
 // GenesisState defines the capability module's genesis state.
 message GenesisState {
     // this line is used by starport scaffolding # genesis/proto/state
+		repeated Winners WinnersList = 8; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Members MembersList = 7; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Pool4Ticket Pool4TicketList = 6; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Pool3Ticket Pool3TicketList = 5; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Pool2Ticket Pool2TicketList = 4; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Pool1Ticket Pool1TicketList = 3; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Pool0Ticket Pool0TicketList = 2; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated JoinPoolAndStakeAsset JoinPoolAndStakeAssetList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
 }
 

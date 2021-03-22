@@ -4,12 +4,204 @@ package sap200.shiaa3.shiaa3;
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 // this line is used by starport scaffolding # 1
+import "shiaa3/Winners.proto";
+import "shiaa3/Members.proto";
+import "shiaa3/Pool4Ticket.proto";
+import "shiaa3/Pool3Ticket.proto";
+import "shiaa3/Pool2Ticket.proto";
+import "shiaa3/Pool1Ticket.proto";
+import "shiaa3/Pool0Ticket.proto";
+import "shiaa3/JoinPoolAndStakeAsset.proto";
 
 option go_package = "github.com/sap200/shiaa3/x/shiaa3/types";
 
 // Query defines the gRPC querier service.
 service Query {
     // this line is used by starport scaffolding # 2
+	rpc Winners(QueryGetWinnersRequest) returns (QueryGetWinnersResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Winners/{id}";
+	}
+	rpc WinnersAll(QueryAllWinnersRequest) returns (QueryAllWinnersResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Winners";
+	}
+
+	rpc Members(QueryGetMembersRequest) returns (QueryGetMembersResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Members/{id}";
+	}
+	rpc MembersAll(QueryAllMembersRequest) returns (QueryAllMembersResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Members";
+	}
+
+	rpc Pool4Ticket(QueryGetPool4TicketRequest) returns (QueryGetPool4TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool4Ticket/{id}";
+	}
+	rpc Pool4TicketAll(QueryAllPool4TicketRequest) returns (QueryAllPool4TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool4Ticket";
+	}
+
+	rpc Pool3Ticket(QueryGetPool3TicketRequest) returns (QueryGetPool3TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool3Ticket/{id}";
+	}
+	rpc Pool3TicketAll(QueryAllPool3TicketRequest) returns (QueryAllPool3TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool3Ticket";
+	}
+
+	rpc Pool2Ticket(QueryGetPool2TicketRequest) returns (QueryGetPool2TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool2Ticket/{id}";
+	}
+	rpc Pool2TicketAll(QueryAllPool2TicketRequest) returns (QueryAllPool2TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool2Ticket";
+	}
+
+	rpc Pool1Ticket(QueryGetPool1TicketRequest) returns (QueryGetPool1TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool1Ticket/{id}";
+	}
+	rpc Pool1TicketAll(QueryAllPool1TicketRequest) returns (QueryAllPool1TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool1Ticket";
+	}
+
+	rpc Pool0Ticket(QueryGetPool0TicketRequest) returns (QueryGetPool0TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool0Ticket/{id}";
+	}
+	rpc Pool0TicketAll(QueryAllPool0TicketRequest) returns (QueryAllPool0TicketResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/Pool0Ticket";
+	}
+
+	rpc JoinPoolAndStakeAsset(QueryGetJoinPoolAndStakeAssetRequest) returns (QueryGetJoinPoolAndStakeAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/JoinPoolAndStakeAsset/{id}";
+	}
+	rpc JoinPoolAndStakeAssetAll(QueryAllJoinPoolAndStakeAssetRequest) returns (QueryAllJoinPoolAndStakeAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/shiaa3/JoinPoolAndStakeAsset";
+	}
+
 }
 
 // this line is used by starport scaffolding # 3
+message QueryGetWinnersRequest {
+	uint64 id = 1;
+}
+
+message QueryGetWinnersResponse {
+	Winners Winners = 1;
+}
+
+message QueryAllWinnersRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllWinnersResponse {
+	repeated Winners Winners = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetMembersRequest {
+	uint64 id = 1;
+}
+
+message QueryGetMembersResponse {
+	Members Members = 1;
+}
+
+message QueryAllMembersRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllMembersResponse {
+	repeated Members Members = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetPool4TicketRequest {
+	uint64 id = 1;
+}
+
+message QueryGetPool4TicketResponse {
+	Pool4Ticket Pool4Ticket = 1;
+}
+
+message QueryAllPool4TicketRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPool4TicketResponse {
+	repeated Pool4Ticket Pool4Ticket = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetPool3TicketRequest {
+	uint64 id = 1;
+}
+
+message QueryGetPool3TicketResponse {
+	Pool3Ticket Pool3Ticket = 1;
+}
+
+message QueryAllPool3TicketRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPool3TicketResponse {
+	repeated Pool3Ticket Pool3Ticket = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetPool2TicketRequest {
+	uint64 id = 1;
+}
+
+message QueryGetPool2TicketResponse {
+	Pool2Ticket Pool2Ticket = 1;
+}
+
+message QueryAllPool2TicketRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPool2TicketResponse {
+	repeated Pool2Ticket Pool2Ticket = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetPool1TicketRequest {
+	uint64 id = 1;
+}
+
+message QueryGetPool1TicketResponse {
+	Pool1Ticket Pool1Ticket = 1;
+}
+
+message QueryAllPool1TicketRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPool1TicketResponse {
+	repeated Pool1Ticket Pool1Ticket = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetPool0TicketRequest {
+	uint64 id = 1;
+}
+
+message QueryGetPool0TicketResponse {
+	Pool0Ticket Pool0Ticket = 1;
+}
+
+message QueryAllPool0TicketRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPool0TicketResponse {
+	repeated Pool0Ticket Pool0Ticket = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetJoinPoolAndStakeAssetRequest {
+	uint64 id = 1;
+}
+
+message QueryGetJoinPoolAndStakeAssetResponse {
+	JoinPoolAndStakeAsset JoinPoolAndStakeAsset = 1;
+}
+
+message QueryAllJoinPoolAndStakeAssetRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllJoinPoolAndStakeAssetResponse {
+	repeated JoinPoolAndStakeAsset JoinPoolAndStakeAsset = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

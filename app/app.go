@@ -86,6 +86,9 @@ import (
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
+	"github.com/sap200/shiaa3/x/assets"
+	assetskeeper "github.com/sap200/shiaa3/x/assets/keeper"
+	assetstypes "github.com/sap200/shiaa3/x/assets/types"
 )
 
 const Name = "shiaa3"
@@ -133,6 +136,7 @@ var (
 		vesting.AppModuleBasic{},
 		shiaa3.AppModuleBasic{},
 		// this line is used by starport scaffolding # stargate/app/moduleBasic
+		assets.AppModuleBasic{},
 	)
 
 	// module account permissions
@@ -200,6 +204,8 @@ type App struct {
 
 	shiaa3Keeper shiaa3keeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
+	ScopedAssetsKeeper capabilitykeeper.ScopedKeeper
+	assetsKeeper       assetskeeper.Keeper
 
 	// the module manager
 	mm *module.Manager
@@ -230,6 +236,7 @@ func New(
 		evidencetypes.StoreKey, ibctransfertypes.StoreKey, capabilitytypes.StoreKey,
 		shiaa3types.StoreKey,
 		// this line is used by starport scaffolding # stargate/app/storeKey
+		assetstypes.StoreKey,
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
 	memKeys := sdk.NewMemoryStoreKeys(capabilitytypes.MemStoreKey)
@@ -319,11 +326,24 @@ func New(
 	// If evidence needs to be handled for the app, set routes in router here and seal
 	app.EvidenceKeeper = *evidenceKeeper
 
-	app.shiaa3Keeper = *shiaa3keeper.NewKeeper(
-		appCodec, keys[shiaa3types.StoreKey], keys[shiaa3types.MemStoreKey],
-	)
-
 	// this line is used by starport scaffolding # stargate/app/keeperDefinition
+	scopedAssetsKeeper := app.CapabilityKeeper.ScopeToModule(assetstypes.ModuleName)
+	app.ScopedAssetsKeeper = scopedAssetsKeeper
+	app.assetsKeeper = *assetskeeper.NewKeeper(
+		appCodec,
+		keys[assetstypes.StoreKey],
+		keys[assetstypes.MemStoreKey],
+		app.IBCKeeper.ChannelKeeper,
+		&app.IBCKeeper.PortKeeper,
+		scopedAssetsKeeper,
+		app.BankKeeper,
+		app.AccountKeeper,
+	)
+	assetsModule := assets.NewAppModule(appCodec, app.assetsKeeper)
+
+	app.shiaa3Keeper = *shiaa3keeper.NewKeeper(
+		appCodec, keys[shiaa3types.StoreKey], keys[shiaa3types.MemStoreKey], app.assetsKeeper, app.BankKeeper,
+	)
 
 	app.GovKeeper = govkeeper.NewKeeper(
 		appCodec, keys[govtypes.StoreKey], app.GetSubspace(govtypes.ModuleName), app.AccountKeeper, app.BankKeeper,
@@ -334,6 +354,7 @@ func New(
 	ibcRouter := porttypes.NewRouter()
 	ibcRouter.AddRoute(ibctransfertypes.ModuleName, transferModule)
 	// this line is used by starport scaffolding # ibc/app/router
+	ibcRouter.AddRoute(assetstypes.ModuleName, assetsModule)
 	app.IBCKeeper.SetRouter(ibcRouter)
 
 	/****  Module Options ****/
@@ -367,6 +388,7 @@ func New(
 		transferModule,
 		shiaa3.NewAppModule(appCodec, app.shiaa3Keeper),
 		// this line is used by starport scaffolding # stargate/app/appModule
+		assetsModule,
 	)
 
 	// During begin block slashing happens after distr.BeginBlocker so that
@@ -401,6 +423,7 @@ func New(
 		ibctransfertypes.ModuleName,
 		shiaa3types.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
+		assetstypes.ModuleName,
 	)
 
 	app.mm.RegisterInvariants(&app.CrisisKeeper)
@@ -583,6 +606,7 @@ func initParamsKeeper(appCodec codec.BinaryMarshaler, legacyAmino *codec.LegacyA
 	paramsKeeper.Subspace(ibctransfertypes.ModuleName)
 	paramsKeeper.Subspace(ibchost.ModuleName)
 	// this line is used by starport scaffolding # stargate/app/paramSubspace
+	paramsKeeper.Subspace(assetstypes.ModuleName)
 
 	return paramsKeeper
 }

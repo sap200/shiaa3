@@ -1,0 +1,13 @@
+syntax = "proto3";
+package sap200.shiaa3.assets;
+
+option go_package = "github.com/sap200/shiaa3/x/assets/types";
+
+import "gogoproto/gogo.proto";
+
+message TransferAsset {
+  string creator = 1;
+  uint64 id = 2;
+  string AssetSerial = 3; 
+  string Receiver = 4; 
+}

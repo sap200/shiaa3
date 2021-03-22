@@ -22,5 +22,37 @@ func GetTxCmd() *cobra.Command {
 
 	// this line is used by starport scaffolding # 1
 
+	// cmd.AddCommand(CmdCreateWinners())
+	// cmd.AddCommand(CmdUpdateWinners())
+	// cmd.AddCommand(CmdDeleteWinners())
+
+	// cmd.AddCommand(CmdCreateMembers())
+	// cmd.AddCommand(CmdUpdateMembers())
+	// cmd.AddCommand(CmdDeleteMembers())
+
+	// cmd.AddCommand(CmdCreatePool4Ticket())
+	// cmd.AddCommand(CmdUpdatePool4Ticket())
+	// cmd.AddCommand(CmdDeletePool4Ticket())
+
+	// cmd.AddCommand(CmdCreatePool3Ticket())
+	// cmd.AddCommand(CmdUpdatePool3Ticket())
+	// cmd.AddCommand(CmdDeletePool3Ticket())
+
+	// cmd.AddCommand(CmdCreatePool2Ticket())
+	// cmd.AddCommand(CmdUpdatePool2Ticket())
+	// cmd.AddCommand(CmdDeletePool2Ticket())
+
+	// cmd.AddCommand(CmdCreatePool1Ticket())
+	// cmd.AddCommand(CmdUpdatePool1Ticket())
+	// cmd.AddCommand(CmdDeletePool1Ticket())
+
+	// cmd.AddCommand(CmdCreatePool0Ticket())
+	// cmd.AddCommand(CmdUpdatePool0Ticket())
+	// cmd.AddCommand(CmdDeletePool0Ticket())
+
+	cmd.AddCommand(CmdCreateJoinPoolAndStakeAsset())
+	// cmd.AddCommand(CmdUpdateJoinPoolAndStakeAsset())
+	// cmd.AddCommand(CmdDeleteJoinPoolAndStakeAsset())
+
 	return cmd
 }

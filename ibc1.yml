@@ -1,0 +1,19 @@
+accounts:
+  - name: alice
+    coins: ["1000token", "100000000stake"]
+  - name: bob
+    coins: ["500token"]
+validator:
+  name: alice
+  staked: "100000000stake"
+client:
+  vuex:
+    path: "vue/src/store"
+faucet:
+  name: bob 
+  coins: ["5token"]
+init:
+  home: "$HOME/.ibc1"
+genesis:
+  chain_id: "shiaa3-ibc1"
+

@@ -1,0 +1,20 @@
+syntax = "proto3";
+package sap200.shiaa3.assets;
+
+// this line is used by starport scaffolding # genesis/proto/import
+import "assets/TimedOutAsset.proto";
+import "assets/SentAsset.proto";
+import "assets/TransferAsset.proto";
+import "assets/Asset.proto";
+
+option go_package = "github.com/sap200/shiaa3/x/assets/types";
+
+// GenesisState defines the assets module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+		repeated TimedOutAsset TimedOutAssetList = 5; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated SentAsset SentAssetList = 4; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated TransferAsset TransferAssetList = 3; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated Asset AssetList = 2; // this line is used by starport scaffolding # genesis/proto/stateField
+    string port_id = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+}

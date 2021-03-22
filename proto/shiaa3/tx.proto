@@ -8,6 +8,237 @@ option go_package = "github.com/sap200/shiaa3/x/shiaa3/types";
 // Msg defines the Msg service.
 service Msg {
     // this line is used by starport scaffolding # proto/tx/rpc
+  rpc CreateWinners(MsgCreateWinners) returns (MsgCreateWinnersResponse);
+  rpc UpdateWinners(MsgUpdateWinners) returns (MsgUpdateWinnersResponse);
+  rpc DeleteWinners(MsgDeleteWinners) returns (MsgDeleteWinnersResponse);
+  rpc CreateMembers(MsgCreateMembers) returns (MsgCreateMembersResponse);
+  rpc UpdateMembers(MsgUpdateMembers) returns (MsgUpdateMembersResponse);
+  rpc DeleteMembers(MsgDeleteMembers) returns (MsgDeleteMembersResponse);
+  rpc CreatePool4Ticket(MsgCreatePool4Ticket) returns (MsgCreatePool4TicketResponse);
+  rpc UpdatePool4Ticket(MsgUpdatePool4Ticket) returns (MsgUpdatePool4TicketResponse);
+  rpc DeletePool4Ticket(MsgDeletePool4Ticket) returns (MsgDeletePool4TicketResponse);
+  rpc CreatePool3Ticket(MsgCreatePool3Ticket) returns (MsgCreatePool3TicketResponse);
+  rpc UpdatePool3Ticket(MsgUpdatePool3Ticket) returns (MsgUpdatePool3TicketResponse);
+  rpc DeletePool3Ticket(MsgDeletePool3Ticket) returns (MsgDeletePool3TicketResponse);
+  rpc CreatePool2Ticket(MsgCreatePool2Ticket) returns (MsgCreatePool2TicketResponse);
+  rpc UpdatePool2Ticket(MsgUpdatePool2Ticket) returns (MsgUpdatePool2TicketResponse);
+  rpc DeletePool2Ticket(MsgDeletePool2Ticket) returns (MsgDeletePool2TicketResponse);
+  rpc CreatePool1Ticket(MsgCreatePool1Ticket) returns (MsgCreatePool1TicketResponse);
+  rpc UpdatePool1Ticket(MsgUpdatePool1Ticket) returns (MsgUpdatePool1TicketResponse);
+  rpc DeletePool1Ticket(MsgDeletePool1Ticket) returns (MsgDeletePool1TicketResponse);
+  rpc CreatePool0Ticket(MsgCreatePool0Ticket) returns (MsgCreatePool0TicketResponse);
+  rpc UpdatePool0Ticket(MsgUpdatePool0Ticket) returns (MsgUpdatePool0TicketResponse);
+  rpc DeletePool0Ticket(MsgDeletePool0Ticket) returns (MsgDeletePool0TicketResponse);
+  rpc CreateJoinPoolAndStakeAsset(MsgCreateJoinPoolAndStakeAsset) returns (MsgCreateJoinPoolAndStakeAssetResponse);
+  rpc UpdateJoinPoolAndStakeAsset(MsgUpdateJoinPoolAndStakeAsset) returns (MsgUpdateJoinPoolAndStakeAssetResponse);
+  rpc DeleteJoinPoolAndStakeAsset(MsgDeleteJoinPoolAndStakeAsset) returns (MsgDeleteJoinPoolAndStakeAssetResponse);
 }
 
 // this line is used by starport scaffolding # proto/tx/message
+message MsgCreateWinners {
+  string creator = 1;
+  string AddressString = 2;
+  string PoolNo = 3;
+  string Winnings = 4;
+}
+
+message MsgCreateWinnersResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateWinners {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3;
+  string PoolNo = 4;
+  string Winnings = 5;
+}
+
+message MsgUpdateWinnersResponse { }
+
+message MsgDeleteWinners {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteWinnersResponse { }
+
+message MsgCreateMembers {
+  string creator = 1;
+  string address = 2;
+}
+
+message MsgCreateMembersResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateMembers {
+  string creator = 1;
+  uint64 id = 2;
+  string address = 3;
+}
+
+message MsgUpdateMembersResponse { }
+
+message MsgDeleteMembers {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteMembersResponse { }
+
+message MsgCreatePool4Ticket {
+  string creator = 1;
+  string AddressString = 2;
+  string LambdaValue = 3;
+}
+
+message MsgCreatePool4TicketResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePool4Ticket {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3;
+  string LambdaValue = 4;
+}
+
+message MsgUpdatePool4TicketResponse { }
+
+message MsgDeletePool4Ticket {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePool4TicketResponse { }
+
+message MsgCreatePool3Ticket {
+  string creator = 1;
+  string AddressString = 2;
+  string LambdaValue = 3;
+}
+
+message MsgCreatePool3TicketResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePool3Ticket {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3;
+  string LambdaValue = 4;
+}
+
+message MsgUpdatePool3TicketResponse { }
+
+message MsgDeletePool3Ticket {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePool3TicketResponse { }
+
+message MsgCreatePool2Ticket {
+  string creator = 1;
+  string AddressString = 2;
+  string LambdaValue = 3;
+}
+
+message MsgCreatePool2TicketResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePool2Ticket {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3;
+  string LambdaValue = 4;
+}
+
+message MsgUpdatePool2TicketResponse { }
+
+message MsgDeletePool2Ticket {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePool2TicketResponse { }
+
+message MsgCreatePool1Ticket {
+  string creator = 1;
+  string AddressString = 2;
+  string LambdaValue = 3;
+}
+
+message MsgCreatePool1TicketResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePool1Ticket {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3;
+  string LambdaValue = 4;
+}
+
+message MsgUpdatePool1TicketResponse { }
+
+message MsgDeletePool1Ticket {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePool1TicketResponse { }
+
+message MsgCreatePool0Ticket {
+  string creator = 1;
+  string AddressString = 2;
+  string LambdaValue = 3;
+}
+
+message MsgCreatePool0TicketResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePool0Ticket {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3;
+  string LambdaValue = 4;
+}
+
+message MsgUpdatePool0TicketResponse { }
+
+message MsgDeletePool0Ticket {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePool0TicketResponse { }
+
+message MsgCreateJoinPoolAndStakeAsset {
+  string creator = 1;
+  string PoolNo = 2;
+  string AssetSerial = 3;
+}
+
+message MsgCreateJoinPoolAndStakeAssetResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdateJoinPoolAndStakeAsset {
+  string creator = 1;
+  uint64 id = 2;
+  string PoolNo = 3;
+  string AssetSerial = 4;
+}
+
+message MsgUpdateJoinPoolAndStakeAssetResponse { }
+
+message MsgDeleteJoinPoolAndStakeAsset {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeleteJoinPoolAndStakeAssetResponse { }

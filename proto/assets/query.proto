@@ -1,0 +1,111 @@
+syntax = "proto3";
+package sap200.shiaa3.assets;
+
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+// this line is used by starport scaffolding # 1
+import "assets/TimedOutAsset.proto";
+import "assets/SentAsset.proto";
+import "assets/TransferAsset.proto";
+import "assets/Asset.proto";
+
+option go_package = "github.com/sap200/shiaa3/x/assets/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    // this line is used by starport scaffolding # 2
+	rpc TimedOutAsset(QueryGetTimedOutAssetRequest) returns (QueryGetTimedOutAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/TimedOutAsset/{id}";
+	}
+	rpc TimedOutAssetAll(QueryAllTimedOutAssetRequest) returns (QueryAllTimedOutAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/TimedOutAsset";
+	}
+
+	rpc SentAsset(QueryGetSentAssetRequest) returns (QueryGetSentAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/SentAsset/{id}";
+	}
+	rpc SentAssetAll(QueryAllSentAssetRequest) returns (QueryAllSentAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/SentAsset";
+	}
+
+	rpc TransferAsset(QueryGetTransferAssetRequest) returns (QueryGetTransferAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/TransferAsset/{id}";
+	}
+	rpc TransferAssetAll(QueryAllTransferAssetRequest) returns (QueryAllTransferAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/TransferAsset";
+	}
+
+	rpc Asset(QueryGetAssetRequest) returns (QueryGetAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/Asset/{id}";
+	}
+	rpc AssetAll(QueryAllAssetRequest) returns (QueryAllAssetResponse) {
+		option (google.api.http).get = "/sap200/shiaa3/assets/Asset";
+	}
+
+}
+
+// this line is used by starport scaffolding # 3
+message QueryGetTimedOutAssetRequest {
+	uint64 id = 1;
+}
+
+message QueryGetTimedOutAssetResponse {
+	TimedOutAsset TimedOutAsset = 1;
+}
+
+message QueryAllTimedOutAssetRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllTimedOutAssetResponse {
+	repeated TimedOutAsset TimedOutAsset = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetSentAssetRequest {
+	uint64 id = 1;
+}
+
+message QueryGetSentAssetResponse {
+	SentAsset SentAsset = 1;
+}
+
+message QueryAllSentAssetRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllSentAssetResponse {
+	repeated SentAsset SentAsset = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetTransferAssetRequest {
+	uint64 id = 1;
+}
+
+message QueryGetTransferAssetResponse {
+	TransferAsset TransferAsset = 1;
+}
+
+message QueryAllTransferAssetRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllTransferAssetResponse {
+	repeated TransferAsset TransferAsset = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+message QueryGetAssetRequest {
+	uint64 id = 1;
+}
+
+message QueryGetAssetResponse {
+	Asset Asset = 1;
+}
+
+message QueryAllAssetRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllAssetResponse {
+	repeated Asset Asset = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

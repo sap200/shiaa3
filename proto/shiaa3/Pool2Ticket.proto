@@ -1,0 +1,13 @@
+syntax = "proto3";
+package sap200.shiaa3.shiaa3;
+
+option go_package = "github.com/sap200/shiaa3/x/shiaa3/types";
+
+import "gogoproto/gogo.proto";
+
+message Pool2Ticket {
+  string creator = 1;
+  uint64 id = 2;
+  string AddressString = 3; 
+  string LambdaValue = 4; 
+}

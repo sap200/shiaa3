@@ -1,0 +1,28 @@
+syntax = "proto3";
+package sap200.shiaa3.assets;
+
+option go_package = "github.com/sap200/shiaa3/x/assets/types";
+
+message AssetsPacketData {
+    oneof packet {
+        NoData noData = 1;
+        // this line is used by starport scaffolding # ibc/packet/proto/field
+				IbcAssetPacketData IbcAssetPacket = 2; // this line is used by starport scaffolding # ibc/packet/proto/field/number
+    }
+}
+
+message NoData {
+}
+
+// this line is used by starport scaffolding # ibc/packet/proto/message
+// IbcAssetPacketData defines a struct for the packet payload
+message IbcAssetPacketData {
+	  string AssetSerial = 1;
+  string Receiver = 2;
+  string Creator = 3;
+}
+
+// IbcAssetPacketAck defines a struct for the packet acknowledgment
+message IbcAssetPacketAck {
+	  string AssetId = 1;
+}
