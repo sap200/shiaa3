@@ -26,7 +26,7 @@ transferred and it can be burnt.
 Another important aspect of it is Assets can be transferred over assets port over a 
 channel, given both chains at endpoints has assets module enabled in app.go
 
-**The monetary policies**
+##The monetary policies
 
 ◼ Assets can be transferred and sending your assets to other people earns you 20% of 
 the base amount as a reward, always.
@@ -42,4 +42,37 @@ enter into a pool an asset need to be staked.
 
 ◼ Each pool plays a game of shai . The winner in this game becomes the owner of 
 all assets staked in the pool.
+
+## Assets
+
+Assets are defined by type struct of golang the assets has the following fields
+
+◼ Id
+
+◼ Creator
+
+◼ SerialNumberPAGE 3
+
+◼ AssetType
+
+◼ AssetName
+
+◼ PriceInTokens
+
+◼ Owner
+
+Assets can be of 5 types as described in the introduction but internally they are 
+represented by integers.
+
+CAMEL = 0
+
+HOUSE = 1
+
+FOSSIL_NECKLACE = 2
+
+CERAMIC_PLATE = 3
+
+TERACOTTA_LAMP = 4
+
+
 
