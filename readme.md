@@ -1,6 +1,6 @@
 # shiaa3
 
-![Screenshot](screenshot.png)
+![Screenshot](shiaalogo2.jpeg)
 
 **shiaa3** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
