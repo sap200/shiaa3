@@ -26,7 +26,7 @@ transferred and it can be burnt.
 Another important aspect of it is Assets can be transferred over assets port over a 
 channel, given both chains at endpoints has assets module enabled in app.go
 
-##The monetary policies
+## The monetary policies
 
 ◼ Assets can be transferred and sending your assets to other people earns you 20% of 
 the base amount as a reward, always.
