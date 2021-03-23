@@ -1,26 +1,78 @@
 # shiaa3
 
+![Screenshot](shiaalogo2.jpeg)
+
 **shiaa3** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
-## Get started
+**Shiaa3** is an implementation of NFT in cosmos-sdk. The native NFTs of shiaa3 is called as 
+Assets
 
-```
-starport serve
-```
+Assets can be of 5 kinds in shiaa3
 
-`serve` command installs dependencies, builds, initializes and starts your blockchain in development.
+− CAMEL (50 Tokens)
 
-## Configure
+− HOUSE (200 Tokens)
 
-Your blockchain in development can be configured with `config.yml`. To learn more see the [reference](https://github.com/tendermint/starport#documentation).
+− FOSSIL NECKLACE (100 Tokens)
 
-## Launch
+− TERACOTTA LAMP (5 Tokens)
 
-To launch your blockchain live on mutliple nodes use `starport network` commands. Learn more about [Starport Network](https://github.com/tendermint/spn).
+− CERAMIC PLATE (10 Token
 
-## Learn more
+The Assets are non-standard NFT and is inspired from the game of catan. They are like 
+cards in the game of catan. But nevertheless as a property of NFT its ownership can be 
+transferred and it can be burnt.
 
-- [Starport](https://github.com/tendermint/starport)
-- [Cosmos SDK documentation](https://docs.cosmos.network)
-- [Cosmos SDK Tutorials](https://tutorials.cosmos.network)
-- [Discord](https://discord.gg/W8trcGV)
+Another important aspect of it is Assets can be transferred over assets port over a 
+channel, given both chains at endpoints has assets module enabled in app.go
+
+##The monetary policies
+
+◼ Assets can be transferred and sending your assets to other people earns you 20% of 
+the base amount as a reward, always.
+
+◼ Assets can be staked in a pool of a club. The club has got 5 pool, [0, 1, 2, 3, 4]. To 
+enter into a pool an asset need to be staked.
+
+◼ Pools has different limit pool-0 and pool-1 supports 2 player 
+
+◼ Pool-2 and pool-3 supports 3 players 
+
+◼ Pool-4 supports 5 players
+
+◼ Each pool plays a game of shai . The winner in this game becomes the owner of 
+all assets staked in the pool.
+
+## Assets
+
+Assets are defined by type struct of golang the assets has the following fields
+
+◼ Id
+
+◼ Creator
+
+◼ SerialNumberPAGE 3
+
+◼ AssetType
+
+◼ AssetName
+
+◼ PriceInTokens
+
+◼ Owner
+
+Assets can be of 5 types as described in the introduction but internally they are 
+represented by integers.
+
+CAMEL = 0
+
+HOUSE = 1
+
+FOSSIL_NECKLACE = 2
+
+CERAMIC_PLATE = 3
+
+TERACOTTA_LAMP = 4
+
+
+
