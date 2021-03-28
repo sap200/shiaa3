@@ -74,5 +74,34 @@ CERAMIC_PLATE = 3
 
 TERACOTTA_LAMP = 4
 
+# Usage
+
+**Buying an Asset**
+```
+shiaa3d tx assets buy-Asset 0 --from alice --chain-id shiaa3-ibc1 --home ./.ibc1 --node http://localhost:26657
+```
+
+**Burning an Asset**
+```
+shiaa3d tx assets burn-Asset <<ASSET_SERIAL>> --from alice --chain-id shiaa3-ibc1 --home ./.ibc1 --node http://localhost:26657
+```
+
+**Gambling in Pool**
+```
+shiaa3d tx shiaa3 join-pool-and-stake-Asset pool-0 CAMEL23e005d4-5068-488b-b039-93696c0330da --from alice --home ./.ibc1 --chain-id shiaa3-ibc1 --node http://localhost:26657
+```
+
+**Seeing the Pool Status**
+```
+shiaa3d q shiaa3 list-Pool0Ticket --node http://localhost:26659
+```
+
+**Sending an Asset across Blockchains**
+```
+shiaa3d  tx assets send-IbcAsset assets channel-0 CAMELaa86d367-091b-44e0-9b49-171d5825d93c cosmos1eymf808cfrudmtczafcwzfqwm0tp9p5k9fgs03 --from alice --home $HOME/.ibc1 --chain-id shiaa3-ibc1 --node http://localhost:26657
+
+```
+
+
 
 
